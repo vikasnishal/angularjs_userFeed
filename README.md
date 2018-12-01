@@ -1,6 +1,6 @@
 This project is built with angular 1.7.5 
 
-run 'npm install' to install all the dependencies.
+run <b>'npm install'</b> to install all the dependencies.
 
 Run follwing commands to run the code in various mode:
 
