@@ -211,11 +211,14 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin',
-        'gh-pages'
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [
         'build'
     ]);
+    grunt.registerTask('build-gh-pages',function(){
+        grunt.task.run('build');
+        grunt.task.run('gh-pages')
+    })
 };
