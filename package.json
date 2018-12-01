@@ -10,7 +10,9 @@
         "url": "https://github.com/vikasnishal/angularjs_userFeed.git"
     },
     "scripts": {
-        "dev": "http-server -a localhost -p 8003 -c-1 ./dist"
+        "dev": "http-server -a localhost -p 8003 -c-1 ./app",
+        "prod":"http-server -a localhost -p 8003 -c-1 ./dist",
+        "build":"grunt build"
     },
     "dependencies": {
         "angular": "1.7.5",

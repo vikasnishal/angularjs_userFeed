@@ -4,6 +4,7 @@ var app = angular.module('app');
 app.controller('questionsController', ['$scope', 'appAjaxService','$location', function ($scope, appService,$location) {
     $scope.answers = appService.getAnswerData();
     $scope.questions = appService.getQuestionsData();
+    $scope.showAddButton = true;
     if ($scope.questions.length == 0) {
         appService.getQuestionsAJAX().then(function () {
             $scope.questions = appService.getQuestionsData();
@@ -27,6 +28,20 @@ app.controller('questionsController', ['$scope', 'appAjaxService','$location', f
     $scope.openDetails = function(id){
         $location.path('/app/'+id)
     };
+    $scope.addQuestion=function(text){
+        if(text){
+            var questionObj = {
+                Text: text,
+                created_at: new Date(),
+                Id : ($scope.questions.length+1).toString(),
+                upvotes : 0,
+                downvotes : 0,
+                votes : 0
+            };
+            $scope.questions.unshift(questionObj);
+            $scope.showAddButton = true;
+        }
+    }
 }]);
 app.controller('questionController', ['$scope', 'appAjaxService', '$location', '$routeParams', function ($scope, appService, $location, $routeParams) {
     console.log($routeParams);

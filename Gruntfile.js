@@ -164,7 +164,7 @@ module.exports = function (grunt) {
                         '.htaccess',
                         '*.html',
                         'views/{,*/}*.html',
-                        'images/{,*/}*.{webp}',
+                        'images/**',
                         'lib/**',
                         'fonts/*'
                     ]
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
                 'svgmin'
             ]
         },
-        
+
         'gh-pages': {
             options: {
                 base: 'dist'
